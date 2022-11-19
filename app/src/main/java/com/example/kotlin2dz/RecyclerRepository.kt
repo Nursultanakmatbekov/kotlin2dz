@@ -1,0 +1,70 @@
+package com.example.kotlin2dz
+
+class RecyclerRepository {
+
+    private val galleryList = mutableListOf<GalleryModel>()
+
+    fun getGalleryList(): List<GalleryModel> {
+        galleryList.add(
+            GalleryModel(
+                1,
+                "http://www.rosphoto.com/images/u/articles/1510/7_5.jpg"
+            )
+        )
+        galleryList.add(
+            GalleryModel(
+                2,
+                "https://mimigram.ru/wp-content/uploads/2020/07/%D0%A7%D1%82%D0%BE-%D1%82%D0%B0%D0%BA%D0%BE%D0%B5-%D1%84%D0%BE%D1%82%D0%BE.jpeg"
+            )
+        )
+        galleryList.add(
+            GalleryModel(
+                3,
+                "data:image/jpeg;base64,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"
+            )
+        )
+        galleryList.add(
+            GalleryModel(
+                4,
+                "data:image/jpeg;base64,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"
+            )
+        )
+        galleryList.add(
+            GalleryModel(
+                5,
+                "https://prophotos.ru/data/articles/0002/2622/image-rectangle_600_x.jpg"
+            )
+        )
+        galleryList.add(
+            GalleryModel(
+                6,
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWy0KIwVQ8LC8aNXBNarywsPVZdWFQeuFO9Pr9BOxEcllRxnZ_3Gyza_4QRRs1PfrYyL8&usqp=CAU"
+            )
+        )
+        galleryList.add(
+            GalleryModel(
+                7,
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWPWtkrl4zlxrq-6gZqduHCP8EDljgZ-DrQVCELslxR2fqQodMtNymN_FXpBV1AqXnbmc&usqp=CAU"
+            )
+        )
+        galleryList.add(
+            GalleryModel(
+                8,
+                "https://i.pinimg.com/474x/7c/00/d3/7c00d314ae46ef24d65f284b309d702b.jpg"
+            )
+        )
+        galleryList.add(
+            GalleryModel(
+                9,
+                "https://joy-pup.com/wp-content/uploads/2019/10/7-19.jpg"
+            )
+        )
+        galleryList.add(
+            GalleryModel(
+                10,
+                "https://joy-pup.com/wp-content/uploads/2019/10/Golovn_1-345x150.jpg"
+            )
+        )
+        return galleryList
+    }
+}
